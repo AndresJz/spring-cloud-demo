@@ -1,0 +1,29 @@
+
+server:
+  port: 8081
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka
+     
+
+feign:
+  hystrix:
+    enabled: true
+
+logging:
+  level:
+    org.springframework.web: info
+    org.springframework.cloud: info
+    com.netflix: info
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
